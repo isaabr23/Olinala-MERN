@@ -1,0 +1,1025 @@
+:root {
+  --primario: #264e70;
+  --secundario: #fdebd3;
+  --tercero: #264e70;
+  --cuarto: #679186;
+  --quinto: #bbd4ce;
+  --blanco: #ffffff;
+  --negro: #000000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
+  box-sizing: border-box; /* Hack para Box Model */
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Krub', sans-serif;
+  /* background-image: linear-gradient(to top, var(--cuarto) 0%, var(--blanco) 100% ); */
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 4rem;
+  color:rgba(248, 34, 166, 0.918)
+}
+
+/****** Utilidades ******/
+.flex {
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+.marginDown-10 {
+  margin-bottom: 10px;
+}
+
+.marginUpDown-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.marginTop-20 {
+  margin-top: 2rem;
+}
+
+.marginTop-10 {
+  margin-top: 1rem;
+}
+
+.marginBottom-30 {
+  margin-bottom: 3rem;
+}
+
+.marginLeft-20 {
+  margin-left: 2rem;
+}
+
+.flexGrow-1 {
+  flex-grow: 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+/*********************************** NAVBAR ***********************************/
+.logo {
+  width: 15rem;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.navbar {
+  background-color: var(--primario);
+  display: block; 
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.navbar-name {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 1px 0;
+}
+
+@media (min-width: 768px) {
+  .navbar-name {
+    margin: 0 1.5rem;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .link {
+    width: 60rem;
+    display: block;
+    justify-content: space-between;
+  }
+}
+
+.login {
+  margin: 0 2rem;
+  width: 115px;
+}
+
+@media (min-width: 768px) {
+  .login {
+    margin-right: 5rem;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  } 
+}
+
+.login-cart {
+  display: flex;
+  align-items: center;
+}
+
+.circle-cart {
+  background-color: #000000;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+}
+
+.margon-cont {
+  margin: 2.5px;
+}
+
+.navbar-name:hover {
+  color: var(--secundario);
+}
+
+/*********************************** LOGIN ***********************************/
+.fondo-login {
+  background-image: url(../src/img/A5.jpg);
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem;
+}
+
+.login-cristal {
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 75%;
+  margin: 4.5rem auto;
+  padding: 4rem;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 8px;
+  border: solid 1px rgba(255, 255, 255, .5);
+  backdrop-filter: blur(4px);
+}
+
+@media (min-width: 468px) {
+  .login-cristal {
+    height: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .login-cristal {
+    max-width: 75rem;
+    height: 80%;
+  }
+}
+
+.container-login {
+  max-height: 500px;
+  max-width: 500px;
+  border-radius: 1.5rem;
+  margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+  .container-login {
+    border: solid 2px rgba(255, 255, 255, .5);
+  }
+}
+
+.form-login {
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .form-login {
+    margin-top: 10px;
+  } 
+}
+
+.input-auth {
+  width: 18rem;
+  height: 4rem;
+  border-radius: .5rem;
+  border: 0;
+  padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .input-auth {
+    width: 30rem;
+  }
+}
+
+.label-login {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.boton-submit {
+  margin: 20px auto;
+  text-align: center;
+}
+
+/*********************************** REGISTER ***********************************/
+
+.register-cristal {
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 80%;
+  margin: 4.5rem auto;
+  padding: 4rem;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 8px;
+  border: solid 1px rgba(255, 255, 255, .5);
+  backdrop-filter: blur(4px);
+}
+
+@media (min-width: 768px) {
+  .register-cristal {
+    max-width: 75rem;
+  }
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .form-register {
+    margin-bottom: .5rem;
+  }
+}
+
+.label-register {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 468px) {
+  .label-register {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .label-register {
+    margin-bottom: 4px;
+    align-items:flex-start
+  }
+}
+
+.input-authR {
+  width: 30rem;
+  height: 4rem;
+  border-radius: .5rem;
+  border: 0;
+  padding: 0 10px;
+}
+
+.boton-submitR {
+  grid-column: 1 / 2;
+  text-align: center;
+}
+
+
+/*********************************** NOSOTROS ***********************************/
+
+
+.img-nosotros {
+  width: 55rem;
+  margin-bottom: 10px;
+}
+
+.texto-nosotros {
+  padding: 3rem 5rem;
+  text-align: start;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border: #738799 1px solid;
+  border-radius: 1rem;
+  margin: 1rem 4rem;
+  box-shadow: 2px 2px 5px #999;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.roboto {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.5rem;
+}
+
+.roboto2 {
+    font-size: 2rem;
+    color: lightslategray;
+    margin: 1rem;
+}
+
+/*********************************** GALERIA ***********************************/
+
+.galeria {
+  display: grid;
+  grid-template-columns: 275px 275px 275px 275px;
+  grid-template-rows: 275px 275px 275px 275px; 
+  margin: 5rem;
+  grid-gap: 1rem;
+}
+
+.contenedor-img {
+  width: 100%;
+  height: 100%;
+  border: #000000 5px solid;
+}
+
+.imagen-galeria {
+  width: 100%;
+  height: 100%;
+}
+
+/*********************************** CONTACTO ***********************************/
+
+.contacto p {
+  font-size: 1.4rem;
+  color: #4f4f4f;
+  width: 50%;
+  margin: 1rem 0 1rem 7rem
+}
+
+/* fieldset{
+  width: 50%;
+  margin: 0 auto;
+} */
+
+/* legend {
+  font-size: 2rem;
+  color: #4f4f4f;
+} */
+
+.label-contacto {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-left: 7rem;
+}
+
+.input-contacto {
+  padding: 1rem;
+  display: block;
+  width: 80%;
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+textarea,
+select {
+  padding: 1rem;
+  display: block;
+  width: 80%;
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  height: 20rem;
+}
+
+.forma-contacto {
+  max-width: 38rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contacto1 {
+  width: 400px;
+  margin-bottom: 2rem;
+}
+
+.boton-submit {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.boton-contacto {
+  width: 15rem;
+  height: 5rem;
+  background-color: var(--primario);
+  color: var(--blanco);
+  font-size: 2rem;
+  margin: 15px auto;
+  border-radius: .5rem;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .boton-contacto {
+    width: 20rem;
+  }
+}
+
+.boton-contacto:hover {
+  background-color: var(--negro);
+}
+
+.button-contacto {
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+/*********************************** OLINALA ***********************************/
+
+.fondo-olinala {
+  background: url("../src/img/fondo.jpg");
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-productos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.productos-active {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 12rem;
+}
+
+.contenido {
+  width: 100%;
+  height: 265px;
+  background: #F6FBFB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 4px;
+}
+
+.review {
+  width: 240px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stars .fa {
+  font-size: 17px;
+  color: #616161;
+}
+
+.stars span {
+  font-size: 12px;
+  padding-right: 10px;
+  color: #bfbfbf;
+}
+
+.review h5 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.nombre, .detalles {
+  width: 220px;
+}
+
+.detalles p{
+  color: #bfbfbf;
+  font-size: 15px;
+}
+
+.btn-box, .btn {
+  display: flex;
+  align-items: center;
+}
+
+.btn-box {
+  width: 230px;
+  height: 60px;
+  justify-content: space-between;
+}
+
+.btn p {
+  margin-top: 15px;
+}
+
+.btn {
+  width: 160px;
+  height: 55px;
+  background: #121212;
+  color: #fff;
+  font-size: 15px;
+  justify-content: space-around;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+}
+
+.container {
+  display: inline-block;
+  margin: 15px 10px;
+  width: 280px;
+  height: 455px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.imagen-producto {
+  background-position: center;
+  background-size: 'cover';
+  width: 100%;
+}
+
+.contenedor-corazon {
+  text-align: center;
+}
+
+.point {
+  cursor: pointer;
+}
+
+.likes {
+  font-size: 15px;
+  font-family: 'Kanit', sans-serif;
+  color: #f3289e;
+  line-height: 14px;
+  margin-top: 7px;
+  position: relative;
+}
+
+.persons {
+  font-size: 15px;
+  font-family: 'Krub', sans-serif;
+  font-weight: bold;
+}
+
+.contenedor-btn-carrito {
+  text-align: center;
+}
+
+/*********************************** FOOTER ***********************************/
+
+.footer {
+  background-color: var(--primario);
+  height: 230px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+}
+
+
+.contenedor-Flogo {
+  width: 22%;
+}
+
+.logo-footer {
+  width: 10rem;
+}
+
+.titulo-footer {
+  color: var(--blanco);
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+
+.texto-footer {
+  color: var(--blanco);
+  margin-top: 2rem;
+  font-weight: 100;
+  font-size: 13px;
+  width: 100%;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-Newsletter {
+  background-color: transparent;
+  border: #ffffff 1px solid;
+  width: 150px;
+  height: 35px;
+  padding: 1rem 1rem;
+}
+/*********************************** INFORMACION ***********************************/
+
+.back {
+  display: flex;
+  align-items: center;
+}
+
+.head-info {
+  flex-grow: 2;
+  margin: 1rem 20rem;
+}
+
+.centrado {
+  text-align: center;
+  margin-top: 2rem 
+}
+
+.back-next {
+  margin: auto;
+}
+
+.siguiente, .atras {
+  color: #bfbfbf;
+}
+
+.containerInfo {
+  height: 460px;
+  box-shadow: 0 10px 20px rgba(10,10,10,.5);
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  width: 80rem;
+  margin: 0rem auto 3rem auto;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 1fr 1fr;
+  padding: 1rem;
+  background-color: #f0f0f08c;
+}
+
+.grid-img-info {
+  grid-row: 1/3;
+}
+
+.InformacionGrid {
+  display: grid;
+  grid-row: 1/3;
+  align-items: center;
+  grid-template-rows: 3fr 1fr 2fr;
+}
+
+.imagen-producto-info {
+  width: 100%;
+  height: 100%;
+}
+
+.imageInfo {
+  margin: 2rem auto;
+  border: 5px solid;
+}
+
+.reviewInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.starsInfo span {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #413b19;
+}
+
+.reviewInfo h5 {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.flex-informacion {
+  display: flex;
+  flex-direction: column;
+}
+.nombreInfo {
+  margin: 1rem auto;
+  font-size: 24px;
+}
+
+.detallesInfo {
+  color: #bfbfbf;
+  font-size: 15px;
+  margin: 1rem 1rem;
+}
+
+.btn-boxInfo, .btnInfo {
+  display: flex;
+  align-items: center;
+}
+
+.btn-boxInfo {
+  justify-content: space-between;
+  margin: 0rem auto 2rem auto;
+}
+
+.btnInfo p {
+  margin-top: 15px;
+}
+
+.btnInfo {
+  width: 160px;
+  height: 55px;
+  background: #121212;
+  color: #fff;
+  font-size: 15px;
+  justify-content: space-around;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+}
+
+.cart-iconInfo, .likeInfo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  background: #333333;
+  font-size: 16px;
+}
+
+.likeInfo {
+  background: #ededed;
+}
+
+.col-heartInfo {
+  color: red;
+}
+
+.pointInfo {
+  cursor: pointer;
+}
+
+/*********************************** CESTA ***********************************/
+
+.containerCesta {
+  display: inline-block;
+  margin: 15px 10px;
+  height: 240px;
+  width: 167px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nombreCesta {
+  font-size: 30px;
+  text-align: center;
+}
+
+.nameCesta {
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+}
+
+.imageCesta {
+  width: 100%;
+  height: 150px;
+}
+
+.reviewCesta {
+  width: 240px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.precioTot {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btnDelete {
+  color: red;
+  width: 100%;
+  text-align: end;
+}
+
+.total-h2 {
+  margin: 2rem 2rem;
+}
+
+.totales {
+  margin: 1rem auto;
+  width: 40rem;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.flextot {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 20px;
+}
+
+.listatot {
+  list-style: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.flexa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pay {
+  width: 160px;
+  height: 45px;
+}
+
+/*********************************** COTIZADOR ***********************************/
+
+.contenedor-cotizador {
+  margin: 3rem;
+}
+
+.cotizador-artesania {
+  flex-grow: 3;
+  margin: 0 1rem ;
+}
+
+.cotizador-precio {
+  flex-grow: 2;
+  margin: 0 1rem ;
+}
+
+.field-cotizador {
+  width: 100%;
+}
+
+/* Para SweetAlert2 */
+.swal2-popup {
+  font-size: 1.4rem !important;
+  font-family: Georgia, serif;
+}
+
+/*********************************** AMINISTRADOR ***********************************/
+
+.admin {
+  height: 450px;
+  padding: 5rem;
+}
+
+.contenedor-admin {
+  justify-content: space-between;
+}
+
+.textDecoration {
+  text-decoration: none;
+  color: #000000;
+}
+
+/*********************************** UTILIDADES ADMINISTRADOR ***********************************/
+
+.BotonAdd {
+  width: 8rem;
+  height: 8rem;
+  background-color: greenyellow;
+  border-radius: 5rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BotonDelete {
+  width: 8rem;
+  height: 8rem;
+  /* background-color: rgb(233, 140, 140); */
+  border: red 2px dashed;
+  border-radius: 5rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*********************************** STOCK ***********************************/
+
+.contenedor-stock {
+  height: 50rem;
+  border: #000000 solid;
+  position: relative;
+}
+
+.contenedor-table {
+  width: 950px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/*********************************** ADMINDS ***********************************/
+
+.contenedor-admins {
+  height: 50rem;
+  border: #000000 solid;
+  position: relative;
+}
+
+.tableAdmins {
+  width: 902px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/*********************************** CLIENTES ***********************************/
+
+.contenedor-clientes {
+  height: 50rem;
+  /* border: #000000 solid; */
+  position: relative;
+}
+
+.tableClientes {
+  width: 1150px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/*********************************** MUI ***********************************/
+
+/* Contenido de las celdas en tablas (tablas de administrador) */
+.MuiDataGrid-cellContent {
+  font-size: 20px;
+}
+
+.MuiDataGrid-columnHeaderTitleContainerContent {
+  font-size: 30px;
+}
+
+.MuiDataGrid-columnHeaders {
+  background: skyblue;
+}
+
+/* Tamaño de la letra en los input mui */
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  font-size: 1.5rem !important;
+}
+
+/* Tamaño del Modal*/
+.css-1bcb91p {
+  height: auto !important;
+}
