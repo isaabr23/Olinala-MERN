@@ -8,6 +8,8 @@
 - npm i axios
 - npm i sweetalert2
 - npm i @mui/material
+- npm i @mui/x-date-pickers
+- npm i dayjs
 
 
 <img src="./src/img/github/App Olinala.jpg" alt="Olinala"/>

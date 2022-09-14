@@ -84,6 +84,11 @@ h3 {
 .absolute {
   position: absolute;
 }
+
+.centrar {
+  margin: 0 auto;
+}
+
 /*********************************** NAVBAR ***********************************/
 .logo {
   width: 15rem;
@@ -135,6 +140,7 @@ h3 {
 .login {
   margin: 0 2rem;
   width: 115px;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -147,8 +153,21 @@ h3 {
 }
 
 .login-cart {
+  position: absolute;
+  top: 20px;
+  right: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .login-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    flex-direction: row;
+  }
 }
 
 .circle-cart {
@@ -160,7 +179,13 @@ h3 {
   color: #ffffff;
   position: absolute;
   bottom: 22px;
-  left: 22px;
+  right: 45px;
+}
+
+@media (min-width: 768px) {
+  .circle-cart {
+    left: 22px;
+  }
 }
 
 .margon-cont {
@@ -381,16 +406,6 @@ h3 {
   margin: 1rem 0 1rem 7rem
 }
 
-/* fieldset{
-  width: 50%;
-  margin: 0 auto;
-} */
-
-/* legend {
-  font-size: 2rem;
-  color: #4f4f4f;
-} */
-
 .label-contacto {
   font-weight: 700;
   text-transform: uppercase;
@@ -402,10 +417,22 @@ h3 {
   padding: 1rem;
   display: block;
   width: 80%;
-  background-color: #e1e1e1;
-  border: none;
+  border: #e1e1e1 1px solid;
   border-radius: 1rem;
   margin: 1rem auto;
+}
+
+.contenedor-field {
+  margin: 15px auto;
+  border: #000000 2px solid;
+  width: 50%;
+}
+
+.contenedorInfoPersonal {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto 10px auto;
 }
 
 textarea,
@@ -422,6 +449,12 @@ select {
 input[type="radio"] {
   width: auto;
   margin: 0;
+}
+
+.ratioInfo {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 10px
 }
 
 select {
@@ -619,15 +652,29 @@ textarea {
 
 .footer {
   background-color: var(--primario);
-  height: 230px;
+  height: auto;
   display: flex;
-  justify-content: space-evenly;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
+  flex-direction: column;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    height: 230px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+  }
+}
 
 .contenedor-Flogo {
-  width: 22%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contenedor-Flogo {
+    width: 22%;
+  }
 }
 
 .logo-footer {
@@ -651,9 +698,38 @@ textarea {
   width: 100%;
 }
 
+.text-titleFooter {
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .text-titleFooter {
+    padding: 0;
+  }
+}
+
 .service {
   display: flex;
   flex-direction: column;
+  margin: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .service {
+    margin: 0;
+  }
+}
+
+.redesFooter {
+  display: flex;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .redesFooter {
+    padding: 0;
+  }
 }
 
 .btn-Newsletter {

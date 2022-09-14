@@ -1,9 +1,7 @@
-import { Button } from "@mui/material";
+import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from "@mui/material";
 import Swal from "sweetalert2";
 import { useForm } from "../hooks/useForm";
 import contacto1 from "../img/contacto1.jpg"
-// import { useDispatch } from "react-redux";
-// import { onContacto } from "../store/contacto/contactoSlice";
 import { useContactoStore } from '../hooks/useContactoStore';
 
 const ContactFormFields = {
@@ -18,15 +16,12 @@ const ContactFormFields = {
 
 export const Contacto = () => {
  
-// const dispatch = useDispatch()
 const { startSavingContacto } = useContactoStore();
 const { contactoName, contactoEmail, contactoTelefono, mensaje, modo, hora, fecha, onInputChange } = useForm(ContactFormFields);
 
 const onSubmit = (e) => {
   e.preventDefault();
-  // console.log(contactoName, contactoEmail, contactoTelefono, mensaje, modo, hora, fecha);
   startSavingContacto({nombre: contactoName, email: contactoEmail, telefono: contactoTelefono, mensaje, modo, hora, fecha})
-  // dispatch(onContacto({name: contactoName, email: contactoEmail, telefono: contactoTelefono, mensaje, modo, hora, fecha}))
 
     Swal.fire({
     position: 'center',
@@ -42,97 +37,108 @@ const onSubmit = (e) => {
 
   return (
     <>
-    <h3 className="center marginUpDown-10">Contacto</h3>
-    <div className="center">
-      <img src={contacto1} alt="contacto1" className="contacto1"/>
-    </div>    
+      <h3 className="center marginUpDown-10">Contacto</h3>
+      <div className="center">
+        <img src={contacto1} alt="contacto1" className="contacto1"/>
+      </div>    
 
         <div className="contenedor seccion contenido-centrado">
 
             <h2 className="center">Llena el formulario de contacto</h2>
 
             <form className="contacto" onSubmit={ onSubmit }>
-                <fieldset>
-                    <legend  className="marginUpDown-10">Informacion Personal</legend>
-                    <label  className="label-contacto" >Nombre:</label>
-                    <input 
-                      type="text"
-                      className="input-contacto"
-                      placeholder="Tu Nombre"
+                <fieldset className="contenedor-field">
+                    <legend className="marginUpDown-10">Informacion Personal</legend>
+                  <div className="contenedorInfoPersonal">
+                    <TextField 
+                      id="outlined-basic"
                       name="contactoName"
+                      label="Nombre"
+                      // placeholder="Nombre"
+                      variant="outlined"
                       value={ contactoName }
                       onChange={ onInputChange }
+                      sx={{ marginBottom: 1 }}
                     />
 
-                    <label  className="label-contacto" >E-mail:</label>
-                    <input
+                    <TextField 
+                      id="outlined-basic"
                       type="email"
-                      className="input-contacto"
-                      placeholder="Tu correo electronico"
                       name="contactoEmail"
+                      placeholder="example@olinala.com"
+                      label="Correo electronico"
+                      variant="outlined"
                       value={ contactoEmail }
                       onChange={ onInputChange }
+                      sx={{ marginBottom: 1 }}
                     />
 
-                    <label  className="label-contacto" >Telefono:</label>
-                    <input
+                    <TextField 
+                      id="outlined-basic"
+                      placeholder="+xx-xx-xx-xx-xx"
+                      label="Telefono"
+                      variant="outlined"
                       type="tel"
-                      className="input-contacto"
-                      placeholder="Tu Telefono"
                       name="contactoTelefono"
                       value={ contactoTelefono }
                       onChange={ onInputChange }
+                      sx={{ marginBottom: 1 }}
                     />
 
-                    <label  className="label-contacto" >Mensaje:</label>
-                    <textarea name="mensaje" cols="30" rows="10" value={ mensaje } onChange={ onInputChange }></textarea>
+                    <TextField
+                      id="outlined-multiline-static"
+                      label="Mensaje"
+                      name="mensaje"
+                      multiline
+                      rows={6}
+                      value={ mensaje }
+                      onChange={ onInputChange }
+                      sx={{ marginBottom: 1 }}
+                    />
+                  </div>
                 </fieldset>
 
-                <fieldset className='marginTop-20'>
+                <fieldset className="contenedor-field">
                     <legend  className="marginUpDown-10">Contacto</legend>
-                    <p>Como desea ser contactado:</p>
-                    <div className="forma-contacto">
-                        <label  className="label-contacto" >Telefono</label>
-                        <input
-                          type="radio"
-                          className="input-contacto"
-                          name="modo"
-                          value="Telefono" 
+                    <div className="contenedorInfoPersonal">
+                      <FormControl>
+                        <FormLabel id="demo-controlled-radio-buttons-group" sx={{fontSize: 20}}>Como desea ser contactado:</FormLabel>
+                        <RadioGroup
+                          aria-labelledby="demo-controlled-radio-buttons-group"
+                          name="controlled-radio-buttons-group"
+                          value={modo}
                           onChange={ onInputChange }
+                        >
+                          <div className="ratioInfo">
+                            <FormControlLabel name="modo" value="Email" control={<Radio />} label="Email" sx={{marginRight: 5}}/>
+                            <FormControlLabel name="modo" value="Telefono" control={<Radio />} label="Telefono" />
+                          </div>
+                        </RadioGroup>
+                      </FormControl>
+
+                      <div>
+                        <p>Elija la fecha y la hora:</p>
+
+                        {/* <label  className="label-contacto" >Fecha:</label> */}
+                        <input
+                          className="input-contacto"
+                          type="date"
+                          name="fecha"
+                          value={ fecha }
+                          onChange={ onInputChange }    
                         />
 
-                        <label  className="label-contacto" >E-mail</label>
+                        {/* <label  className="label-contacto" >Hora:</label> */}
                         <input
                           className="input-contacto"
-                          type="radio"
-                          name="modo"
-                          value="Email"
-                          onChange={ onInputChange }
+                          type="time"
+                          name="hora"
+                          min="09:00" max="18:00" 
+                          value={ hora }
+                          onChange={ onInputChange }  
                         />
+                      </div>
                     </div>
-                        
-                        <div>
-                          <p>Elija la fecha y la hora:</p>
-
-                          <label  className="label-contacto" >Fecha:</label>
-                          <input
-                            className="input-contacto"
-                            type="date"
-                            name="fecha"
-                            value={ fecha }
-                            onChange={ onInputChange }    
-                          />
-
-                          <label  className="label-contacto" >Hora:</label>
-                          <input
-                            className="input-contacto"
-                            type="time"
-                            name="hora"
-                            min="09:00" max="18:00" 
-                            value={ hora }
-                            onChange={ onInputChange }  
-                          />
-                        </div>
                 </fieldset>
 
 

@@ -22,7 +22,7 @@ export const Footer = () => {
           </Link>
           <h1 className="titulo-footer">Artesanias <span className='span-footer'>Olinala</span></h1>
         </div>
-        <div>
+        <div className='text-titleFooter'>
           <p className='texto-footer'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet nesciunt beatae hic sunt libero similique alias tempora consectetur aut, maxime nemo</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export const Footer = () => {
       <div>
         <h1 className="titulo-footer">Servicio</h1>
 
-        <div className='flex marginBottom-30'>
+        <div className='redesFooter'>
           <FacebookIcon sx={{ fontSize: 25, color: '#ffffff', marginLeft: 2, marginTop:2, cursor: 'pointer' }} />
           <TwitterIcon sx={{ fontSize: 25, color: '#ffffff', marginLeft: 2, marginTop:2, cursor: 'pointer' }} />
           <InstagramIcon sx={{ fontSize: 25, color: '#ffffff', marginLeft: 2, marginTop:2, cursor: 'pointer' }} />
